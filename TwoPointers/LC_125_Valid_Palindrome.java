@@ -1,22 +1,13 @@
 class Solution {
-    public int[] twoSum(int[] numbers, int target) {
-        int left =0;
-        int right = numbers.length-1;
-        //ArrayList<integer> arr = new ArrayList<>();
-        //int[] res = new int[2];
-        while(left<right){
-            int sum = numbers[left]+numbers[right];
-            if(sum == target){
-                return new int[]{left+1,right+1};
-            }
-            else if(sum>target){
-                right--;
-            }
-            else{
-                left++;
+    public boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        s = s.replaceAll("[^a-z0-9]","");
+        int n=s.length();
+        for(int i=0; i<n/2;i++){
+            if(s.charAt(i)!=s.charAt(n-1-i)){
+                return false;
             }
         }
-
-        return new int[]{-1,-1};
+        return true;
     }
 }
